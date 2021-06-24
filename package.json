@@ -5,6 +5,11 @@
 	"description": "Minimal Sveltekit + Electron starter template.",
 	"main": "src/electron.cjs",
 	"type": "module",
+	"author": {
+		"name": "Author Name",
+		"email": "name@email.com",
+		"url": "http://www.urlhere.com"
+	},
 	"scripts": {
 		"dev": "NODE_ENV=dev npm run dev:all",
 		"dev:all": "concurrently -n=svelte,electron -c='#ff3e00',blue \"npm run dev:svelte\" \"npm run dev:electron\"",
@@ -43,7 +48,7 @@
 		"electron-connect": "^0.6.3",
 		"electron-packager": "^15.2.0",
 		"electron-updater": "^4.3.9",
-		"eslint": "^7.27.0",
+		"eslint": "^7.29.0",
 		"eslint-config-airbnb-base": "^14.2.1",
 		"eslint-config-airbnb-typescript": "^12.3.1",
 		"eslint-plugin-import": "^2.23.4",
