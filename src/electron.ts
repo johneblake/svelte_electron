@@ -1,12 +1,12 @@
-const windowStateManager = require('electron-window-state');
-const contextMenu = require('electron-context-menu');
+import windowStateManager from 'electron-window-state';
+import contextMenu from 'electron-context-menu';
 // eslint-disable-next-line import/no-extraneous-dependencies
-const { app, BrowserWindow } = require('electron');
-const serve = require('electron-serve');
+import { app, BrowserWindow } from 'electron';
+import serve from 'electron-serve';
+import reloader from 'electron-reloader';
 
 try {
-  // eslint-disable-next-line global-require
-  require('electron-reloader')(module);
+  reloader(module);
 } catch (e) {
   // eslint-disable-next-line no-console
   console.error(e);
@@ -15,7 +15,7 @@ try {
 const serveURL = serve({ directory: '.' });
 const port = process.env.PORT || 3000;
 const dev = !app.isPackaged;
-let mainWindow;
+let mainWindow: BrowserWindow | null;
 
 function createWindow() {
   const windowState = windowStateManager({
@@ -71,8 +71,8 @@ contextMenu({
   ],
 });
 
-function loadVite(portNum) {
-  mainWindow.loadURL(`http://localhost:${portNum}`).catch((e) => {
+function loadVite(portNum: number | string) {
+  mainWindow?.loadURL(`http://localhost:${portNum}`).catch((e) => {
     // eslint-disable-next-line no-console
     console.log('Error loading URL, retrying', e);
     setTimeout(() => {
