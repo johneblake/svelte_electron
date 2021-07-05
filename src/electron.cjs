@@ -9,18 +9,18 @@ try {
   console.error(e);
 }
 
-const serveURL = serve({ directory: '.' });
+const serveURL = serve({ directory: "." });
 const port = process.env.PORT || 3000;
 const dev = !app.isPackaged;
 let mainWindow;
 
 function createWindow() {
-  const windowState = windowStateManager({
+  let windowState = windowStateManager({
     defaultWidth: 800,
     defaultHeight: 600,
   });
 
-  const mainWin = new BrowserWindow({
+  const mainWindow = new BrowserWindow({
     backgroundColor: 'whitesmoke',
     titleBarStyle: 'hidden',
     autoHideMenuBar: true,
@@ -43,25 +43,25 @@ function createWindow() {
     height: windowState.height,
   });
 
-  windowState.manage(mainWin);
+  windowState.manage(mainWindow);
 
-  mainWin.once('ready-to-show', () => {
-    mainWin.show();
-    mainWin.focus();
+  mainWindow.once('ready-to-show', () => {
+    mainWindow.show();
+    mainWindow.focus();
   });
 
-  mainWin.on('close', () => {
-    windowState.saveState(mainWin);
+  mainWindow.on('close', () => {
+    windowState.saveState(mainWindow);
   });
 
-  return mainWin;
+  return mainWindow;
 }
 
 contextMenu({
   showLookUpSelection: false,
   showSearchWithGoogle: false,
   showCopyImage: false,
-  prepend: () => [
+  prepend: (defaultActions, params, browserWindow) => [
     {
       label: 'Make App 💻',
     },
@@ -73,7 +73,7 @@ function loadVite(portNum) {
     // eslint-disable-next-line no-console
     console.log('Error loading URL, retrying', e);
     setTimeout(() => {
-      loadVite(portNum);
+      loadVite(port);
     }, 200);
   });
 }
@@ -94,7 +94,6 @@ app.on('activate', () => {
     createMainWindow();
   }
 });
-
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') app.quit();
 });
