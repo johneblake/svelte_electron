@@ -32,7 +32,7 @@
   button:focus {
     @apply border-opacity-100;
   }
-  
+
   button:active {
     @apply bg-red-500 bg-opacity-20;
   }

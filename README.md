@@ -4,20 +4,20 @@
 
 # Sveltekit + Electron
 
-Minimal [Sveltekit](https://github.com/sveltejs/kit#readme) + [Electron](https://www.electronjs.org/) starter template based on fractalhq/sveltekit-electron.  Includes tailwindcss and eslint airbnb.
+Minimal [Sveltekit](https://github.com/sveltejs/kit#readme) + [Electron](https://www.electronjs.org/) starter template based on fractalhq/sveltekit-electron. Includes tailwindcss and eslint airbnb.
 
 <br />
 
 ## Getting Started
-> *Feel free to substitute `npm` with `pnpm` or `yarn`.
 
-|         |                                             |
-| ------- | ------------------------------------------- |
+> \*Feel free to substitute `npm` with `pnpm` or `yarn`.
+
+|         |                                              |
+| ------- | -------------------------------------------- |
 | Clone   | · `npx degit johneblake/sveltekit-electron ` |
-| Install | · `npm install`                             |
-| Develop | · `npm run dev`                             |
-| Build   | · `npm run build`                           |
-
+| Install | · `npm install`                              |
+| Develop | · `npm run dev`                              |
+| Build   | · `npm run build`                            |
 
 <br />
 

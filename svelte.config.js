@@ -9,7 +9,7 @@ const config = {
   kit: {
     adapter: adapter({}),
     target: '#svelte',
-    ssr: false,
+    ssr: true,
   },
 };
 export default config;

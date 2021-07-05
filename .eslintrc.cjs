@@ -1,35 +1,35 @@
 module.exports = {
+  root: true,
   parser: '@typescript-eslint/parser',
-  plugins: [
-    'svelte3',
-    '@typescript-eslint',
-  ],
+  extends: ['eslint:recommended', 'plugin:@typescript-eslint/eslint-recommended', 'prettier'],
+  plugins: ['svelte3', '@typescript-eslint'],
+  ignorePatterns: ['*.cjs'],
+  overrides: [{ files: ['*.svelte'], processor: 'svelte3/svelte3' }],
+  settings: {
+    'svelte3/typescript': () => require('typescript'),
+    'svelte3/ignore-styles': (type) => type !== 'postcss',
+  },
   parserOptions: {
-    ecmaVersion: 2019,
     sourceType: 'module',
+    ecmaVersion: 2019,
     tsconfigRootDir: __dirname,
     project: ['./tsconfig.json'],
     extraFileExtensions: ['.svelte'],
   },
   env: {
     browser: true,
-    es6: true,
+    es2017: true,
+    node: true,
   },
-  overrides: [
-    {
-      files: ['*.svelte'],
-      processor: 'svelte3/svelte3',
-    },
-  ],
   rules: {
-  },
-  extends: [
-    'eslint:recommended',
-    'airbnb-typescript/base',
-    'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended',
-  ],
-  settings: {
-    'svelte3/typescript': true,
+    'object-curly-newline': [
+      'error',
+      {
+        ObjectExpression: { multiline: true, minProperties: 3 },
+        ObjectPattern: { multiline: true, minProperties: 3 },
+        ImportDeclaration: 'never',
+        ExportDeclaration: 'never',
+      },
+    ],
   },
 };
