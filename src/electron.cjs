@@ -9,7 +9,7 @@ try {
   console.error(e);
 }
 
-const serveURL = serve({ directory: "." });
+const serveURL = serve({ directory: '.' });
 const port = process.env.PORT || 3000;
 const dev = !app.isPackaged;
 let mainWindow;
