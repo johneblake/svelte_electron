@@ -2,7 +2,7 @@
   import '../app.postcss';
   import { onMount } from 'svelte';
 
-  let ready: boolean = false;
+  let ready = false;
   onMount(() => (ready = true));
 </script>
 

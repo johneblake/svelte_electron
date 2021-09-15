@@ -9,7 +9,7 @@ try {
   console.error(e);
 }
 
-const serveURL = serve({ directory: "." });
+const serveURL = serve({ directory: '.' });
 const port = process.env.PORT || 3000;
 const dev = !app.isPackaged;
 let mainWindow;
@@ -79,7 +79,9 @@ function loadVite(port) {
 
 function createMainWindow() {
   mainWindow = createWindow();
-  mainWindow.once('close', () => { mainWindow = null });
+  mainWindow.once('close', () => {
+    mainWindow = null;
+  });
 
   if (dev) loadVite(port);
   else serveURL(mainWindow);
