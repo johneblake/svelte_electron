@@ -2,9 +2,9 @@
   <img src="static/sveltekit-electron.svg" />
 </p>
 
-# Sveltekit + Electron
+# Sveltekit + Electron + TailwindCSS + ESLint + Prettier
 
-Minimal [Sveltekit](https://github.com/sveltejs/kit#readme) + [Electron](https://www.electronjs.org/) starter template based on fractalhq/sveltekit-electron. Includes tailwindcss and eslint airbnb.
+Minimal [Sveltekit](https://github.com/sveltejs/kit#readme) + [Electron](https://www.electronjs.org/) starter template based on fractalhq/sveltekit-electron.
 
 <br />
 

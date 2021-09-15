@@ -68,8 +68,9 @@ contextMenu({
   ],
 });
 
-function loadVite(port) {
-  mainWindow.loadURL(`http://localhost:${port}`).catch((e) => {
+function loadVite(portNum) {
+  mainWindow?.loadURL(`http://localhost:${portNum}`).catch((e) => {
+    // eslint-disable-next-line no-console
     console.log('Error loading URL, retrying', e);
     setTimeout(() => {
       loadVite(port);

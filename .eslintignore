@@ -4,3 +4,4 @@ build
 **/*.cjs
 **/*.d.ts
 *.js
+hmr-stores.ts

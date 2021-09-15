@@ -1,6 +1,7 @@
 {
   "appId": "com.example.app",
   "productName": "Svelte Electron",
+  "extraFiles": [],
   "directories": {
     "output": "dist"
   },
