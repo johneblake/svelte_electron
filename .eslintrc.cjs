@@ -1,7 +1,7 @@
 module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
-  extends: ['eslint:recommended', 'plugin:@typescript-eslint/eslint-recommended', 'prettier'],
+  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
   plugins: ['svelte3', '@typescript-eslint'],
   ignorePatterns: ['*.cjs'],
   overrides: [{ files: ['*.svelte'], processor: 'svelte3/svelte3' }],
@@ -23,12 +23,12 @@ module.exports = {
   },
   rules: {
     'object-curly-newline': [
-      'error',
+      'off',
       {
-        ObjectExpression: { multiline: true, minProperties: 3 },
+        ObjectExpresion: { multiline: true, minProperties: 3 },
         ObjectPattern: { multiline: true, minProperties: 3 },
         ImportDeclaration: 'never',
-        ExportDeclaration: 'never',
+        Exportdeclaration: 'never',
       },
     ],
   },
